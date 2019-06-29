@@ -1,0 +1,30 @@
+<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
+     fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xs="0">
+  <div fxFlex *ngIf="selectedItem">
+    <mat-card>
+      <mat-card-title-group>
+        <mat-card-title><h3>{{selectedItem.name | uppercase}}</h3></mat-card-title>
+      </mat-card-title-group>
+      <img matCardImage src={{selectedItem.image}} alt={{selectedItem.name}}>
+      <mat-card-content><p>{{selectedItem.description}} </p></mat-card-content>
+      <mat-card-actions align="start">
+        <button mat-button (click)="onAction($event)">LIKE</button>
+        <button mat-button (click)="onAction($event)">SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div fxFlex *ngIf="selectedItem">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Comments</mat-card-title>
+    </mat-card-header>
+    <mat-list dense>
+      <mat-list-item *ngFor="let comment of item.comments">
+        <h2 matLine>{{comment.author}}</h2>
+        <p matLine>{{comment.comment}}</p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+  </div>
+</div>
+
