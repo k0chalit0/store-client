@@ -42,7 +42,6 @@ const ITEMS: Item[] = [{
 export class CatalogComponent implements OnInit {
 
   items = ITEMS;
-  selectedItem = ITEMS[0];
   constructor() { }
 
   ngOnInit() {
@@ -53,7 +52,6 @@ export class CatalogComponent implements OnInit {
   }
 
   selectItem(positionItem) {
-    console.log(positionItem);
     this.selectedItem = ITEMS[positionItem];
   }
 }
