@@ -48,4 +48,12 @@ export class CatalogComponent implements OnInit {
   ngOnInit() {
   }
 
+  onAction($event: MouseEvent) {
+    console.log($event);
+  }
+
+  selectItem(positionItem) {
+    console.log(positionItem);
+    this.selectedItem = ITEMS[positionItem];
+  }
 }
